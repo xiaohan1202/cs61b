@@ -65,6 +65,7 @@ public class ArrayDeque<T> {
 		if (size == 0){
 			return null;
 		}
+		T temp = items[plusOne(nextFirst)];
 		nextFirst = plusOne(nextFirst);
 		items[nextFirst] = null;
 		double a = size;
@@ -74,12 +75,13 @@ public class ArrayDeque<T> {
 			resize(items.length / 2);
 		}
 		size -= 1;
-		return items[nextFirst];
+		return temp;
 	}
 	public T removeLast(){
 		if(size == 0){
 			return null;
 		}
+		T temp = items[minusOne(nextLast)];
 		nextLast = minusOne(nextLast);
 		items[nextLast] = null;
 		double a = size;
@@ -89,7 +91,7 @@ public class ArrayDeque<T> {
 			resize(items.length / 2);
 		}
 		size -= 1;
-		return items[nextLast];
+		return temp;
 	}
 
 }
