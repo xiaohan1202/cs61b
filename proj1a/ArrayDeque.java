@@ -62,21 +62,29 @@ public class ArrayDeque<T> {
 		}
 	}
 	public T removeFirst(){
+		if (size == 0){
+			return null;
+		}
 		nextFirst = plusOne(nextFirst);
 		items[nextFirst] = null;
 		double a = size;
 		double b = items.length;
 		double R = a / b;
-		if (R < 0.25){
+		if (items.length > 16 && R < 0.25){
 			resize(items.length / 2);
 		}
 		size -= 1;
 		return items[plusOne(nextFirst)];
 	}
 	public T removeLast(){
+		if(size == 0){
+			return null;
+		}
 		nextLast = minusOne(nextLast);
 		items[nextLast] = null;
-		double R = size / items.length * 1.0;
+		double a = size;
+		double b = items.length;
+		double R = a / b;
 		if (items.length > 16 && R < 0.25){
 			resize(items.length / 2);
 		}
