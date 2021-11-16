@@ -21,8 +21,8 @@ public class ArrayDeque<T> {
 	private void resize(int res){
 		T[] a = (T[])new Object[res];
 		for(int i = 0; i < size; i++){
-			a[i] = items[nextLast];
-			nextLast = plusOne(nextLast);
+			a[i] = items[plusOne(nextFirst)];
+			nextFirst = plusOne(nextFirst);
 		}
 		nextLast = size;
 		nextFirst = a.length - 1;
