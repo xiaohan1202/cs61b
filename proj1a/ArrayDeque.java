@@ -51,6 +51,9 @@ public class ArrayDeque<T> {
 		size += 1;
 	}
 	public T get(int index){
+		if(index > size - 1){
+			return null;
+		}
 		int st = plusOne(nextFirst);
 		return items[(index + st)% items.length];
 	}
