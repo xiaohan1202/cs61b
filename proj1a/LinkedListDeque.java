@@ -77,9 +77,9 @@ public class LinkedListDeque<T> {
 			return null;
 		}
 		for(int i = 0; i <= index; i++){
-			p = p.next;
 			if(i == index)
 				return p.item;
+			p = p.next;
 		}
 		return null;
 	}

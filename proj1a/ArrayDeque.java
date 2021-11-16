@@ -18,7 +18,7 @@ public class ArrayDeque<T> {
 	public int size(){
 		return size;
 	}
-	public void resize(int res){
+	private void resize(int res){
 		T[] a = (T[])new Object[res];
 		for(int i = 0; i < size; i++){
 			a[i] = items[nextLast];
@@ -51,7 +51,8 @@ public class ArrayDeque<T> {
 		size += 1;
 	}
 	public T get(int index){
-		return items[index];
+		int st = plusOne(nextFirst);
+		return items[(index + st)% items.length];
 	}
 	public void printDeque(){
 		int pos = plusOne(nextFirst);
