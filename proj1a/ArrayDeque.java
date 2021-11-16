@@ -74,7 +74,7 @@ public class ArrayDeque<T> {
 			resize(items.length / 2);
 		}
 		size -= 1;
-		return items[plusOne(nextFirst)];
+		return items[nextFirst];
 	}
 	public T removeLast(){
 		if(size == 0){
@@ -89,7 +89,7 @@ public class ArrayDeque<T> {
 			resize(items.length / 2);
 		}
 		size -= 1;
-		return items[minusOne(nextLast)];
+		return items[nextLast];
 	}
 
 }
