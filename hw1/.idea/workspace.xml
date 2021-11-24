@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d0291b2-6e9d-4862-8ce1-f7fc42aa73ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../proj2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proj2/.idea/libraries/javalib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proj2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proj2/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proj2/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proj2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proj2/proj2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuitarHeroLite.java.skeleton" beforeDir="false" afterPath="$PROJECT_DIR$/GuitarHeroLite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuitarPlayer.java.skeleton" beforeDir="false" afterPath="$PROJECT_DIR$/GuitarPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TTFAF.java.skeleton" beforeDir="false" afterPath="$PROJECT_DIR$/TTFAF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hw1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/synthesizer/ArrayRingBuffer.java.skeleton" beforeDir="false" afterPath="$PROJECT_DIR$/synthesizer/ArrayRingBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/synthesizer/GuitarString.java.skeleton" beforeDir="false" afterPath="$PROJECT_DIR$/synthesizer/GuitarString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/synthesizer/TestArrayRingBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/synthesizer/TestArrayRingBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/synthesizer/TestGuitarString.java" beforeDir="false" afterPath="$PROJECT_DIR$/synthesizer/TestGuitarString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synthesizer/AbstractBoundedQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/synthesizer/AbstractBoundedQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab4/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1gold/out/production/proj1gold/TestArrayDequeGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1gold/out/production/proj1gold/TestArrayDequeGold.class" afterDir="false" />
@@ -69,7 +52,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="copyright.filetypes.XML" />
   </component>
-  <component name="RunManager" selected="JUnit.TestArrayRingBuffer.someTest">
+  <component name="RunManager" selected="Application.GuitarHero">
     <configuration name="GuitarHero" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GuitarHero" />
       <module name="hw1" />
@@ -131,8 +114,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestArrayRingBuffer.someTest" />
         <item itemvalue="Application.GuitarHero" />
+        <item itemvalue="JUnit.TestArrayRingBuffer.someTest" />
         <item itemvalue="JUnit.TestGuitarString.testPluckTheAString" />
         <item itemvalue="Application.TestGuitarString" />
         <item itemvalue="Application.GuitarHeroLite" />
