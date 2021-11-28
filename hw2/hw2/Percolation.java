@@ -8,6 +8,9 @@ public class Percolation {
     private int N;
     WeightedQuickUnionUF wqu;
     public Percolation(int N) {
+        if (N <= 0){
+            throw new java.lang.IllegalArgumentException();
+        }
         this.N = N;
         wqu = new WeightedQuickUnionUF(N * N + 2);
         grid = new Boolean[N][N];
@@ -26,9 +29,14 @@ public class Percolation {
         return N * y + x;
     }
     public void open(int row, int col) {
-        grid[row][col] = true;
-        unionSite(row, col);
-        opennum += 1;
+        if(row < 0 || col < 0 || row > N - 1 || col > N - 1){
+            throw new java.lang.IndexOutOfBoundsException();
+        }
+        if(!isOpen(row, col)){
+            grid[row][col] = true;
+            unionSite(row, col);
+            opennum += 1;
+        }
     }
     private void unionSite(int row, int col){
         if(row != N - 1){
@@ -55,9 +63,15 @@ public class Percolation {
     }
     // open the site (row, col) if it is not open already
     public boolean isOpen(int row, int col) {
+        if(row < 0 || col < 0 || row > N - 1 || col > N - 1){
+            throw new java.lang.IndexOutOfBoundsException();
+        }
         return grid[row][col];
     } // is the site (row, col) open?
     public boolean isFull(int row, int col) {
+        if(row < 0 || col < 0 || row > N - 1 || col > N - 1){
+            throw new java.lang.IndexOutOfBoundsException();
+        }
         return wqu.connected(0, xyTo1D(row, col)) && isOpen(row, col);
     }
     // is the site (row, col) full?
