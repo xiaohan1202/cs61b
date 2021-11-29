@@ -6,8 +6,8 @@ public class Percolation {
     private Boolean[][] grid;
     private int opennum = 0;
     private int N;
-    WeightedQuickUnionUF wqu;
-    WeightedQuickUnionUF wquB;
+    private WeightedQuickUnionUF wqu;
+    private WeightedQuickUnionUF wquB;
     public Percolation(int N) {
         if (N <= 0){
             throw new java.lang.IllegalArgumentException();
@@ -84,6 +84,9 @@ public class Percolation {
     }
     // number of open sites
     public boolean percolates() {
+        if (N == 1) {
+            return isOpen(0, 0);
+        }
         return wqu.connected(0, N * N + 1);
     }
     // does the system percolate?
