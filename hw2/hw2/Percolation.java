@@ -7,12 +7,14 @@ public class Percolation {
     private int opennum = 0;
     private int N;
     WeightedQuickUnionUF wqu;
+    WeightedQuickUnionUF wquB;
     public Percolation(int N) {
         if (N <= 0){
             throw new java.lang.IllegalArgumentException();
         }
         this.N = N;
         wqu = new WeightedQuickUnionUF(N * N + 2);
+        wquB = new WeightedQuickUnionUF(N * N + 1);
         grid = new Boolean[N][N];
         for(int i = 0; i < N; i++){
             for(int j = 0; j < N; j++){
@@ -21,6 +23,7 @@ public class Percolation {
         }
         for (int i = 0; i < N; i++) {
             wqu.union(0, xyTo1D(0, i));
+            wquB.union(0, xyTo1D(0, i));
             wqu.union(N * N + 1, xyTo1D(N - 1, i));
         }
     }
@@ -34,11 +37,12 @@ public class Percolation {
         }
         if(!isOpen(row, col)){
             grid[row][col] = true;
-            unionSite(row, col);
+            unionSite(row, col, wqu);
+            unionSite(row, col, wquB);
             opennum += 1;
         }
     }
-    private void unionSite(int row, int col){
+    private void unionSite(int row, int col, WeightedQuickUnionUF wqu){
         if(row != N - 1){
             if(isOpen(row + 1, col)){
                 wqu.union(xyTo1D(row, col), xyTo1D(row + 1, col));
@@ -72,7 +76,7 @@ public class Percolation {
         if(row < 0 || col < 0 || row > N - 1 || col > N - 1){
             throw new java.lang.IndexOutOfBoundsException();
         }
-        return wqu.connected(0, xyTo1D(row, col)) && isOpen(row, col);
+        return wquB.connected(0, xyTo1D(row, col)) && isOpen(row, col);
     }
     // is the site (row, col) full?
     public int numberOfOpenSites() {
@@ -83,5 +87,7 @@ public class Percolation {
         return wqu.connected(0, N * N + 1);
     }
     // does the system percolate?
-//    public static void main(String[] args)   // use for unit testing (not required)
+    public static void main(String[] args) {
+        return;
+    }  // use for unit testing (not required)
 }
