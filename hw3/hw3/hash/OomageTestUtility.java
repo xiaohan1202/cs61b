@@ -1,9 +1,26 @@
 package hw3.hash;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class OomageTestUtility {
     public static boolean haveNiceHashCodeSpread(List<Oomage> oomages, int M) {
+        List<Oomage>[] buckets = new LinkedList[M];
+        for(int i  = 0; i < M; i++){
+            buckets[i] = new LinkedList<>();
+        }
+        for (int i = 0; i < oomages.toArray().length; i++){
+            Oomage o = oomages.get(i);
+            int bucketNum = (o.hashCode() & 0x7FFFFFFF) % M;
+            buckets[bucketNum].add(o);
+        }
+        for (int i = 0; i < M; i++){
+            if (buckets[i].toArray().length < (oomages.toArray().length / 50) || buckets[i].toArray().length > (oomages.toArray().length / 2.5)){
+                return false;
+            }
+        }
+        return true;
         /* TODO:
          * Write a utility function that returns true if the given oomages
          * have hashCodes that would distribute them fairly evenly across
@@ -12,6 +29,5 @@ public class OomageTestUtility {
          * and ensure that no bucket has fewer than N / 50
          * Oomages and no bucket has more than N / 2.5 Oomages.
          */
-        return false;
     }
 }
